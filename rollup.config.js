@@ -8,6 +8,7 @@ export default {
   input: 'src/index.js',
   output: [
     {
+      globals: { three: 'THREE' }, // a-frame exposes three as global
       format: 'umd',
       name: 'ForceGraphAR',
       file: `dist/${name}.js`,
