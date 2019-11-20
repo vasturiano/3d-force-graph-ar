@@ -1,0 +1,23 @@
+<head>
+  <style> body { margin: 0; } </style>
+
+  <script src="//aframe.io/releases/0.9.2/aframe.min.js"></script>
+  <script src="//unpkg.com/ar.js/aframe/build/aframe-ar.min.js"></script>
+
+  <script src="//unpkg.com/3d-force-graph-ar"></script>
+  <!--<script src="../../dist/3d-force-graph-ar.js"></script>-->
+</head>
+
+<body>
+
+  <div id="3d-graph"></div>
+
+  <script>
+    const elem = document.getElementById('3d-graph');
+
+    const Graph = ForceGraphAR()(elem)
+      .jsonUrl('../datasets/blocks.json')
+      .nodeAutoColorBy('user')
+      .nodeLabel(node => `${node.user}: ${node.description}`);
+  </script>
+</body>

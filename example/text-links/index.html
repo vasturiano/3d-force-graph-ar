@@ -1,0 +1,44 @@
+<head>
+  <style> body { margin: 0; } </style>
+
+  <script src="//unpkg.com/three"></script>
+  <script src="//unpkg.com/three-spritetext"></script>
+
+  <script src="//aframe.io/releases/0.9.2/aframe.min.js"></script>
+  <script src="//unpkg.com/ar.js/aframe/build/aframe-ar.min.js"></script>
+
+  <script src="//unpkg.com/3d-force-graph-ar"></script>
+  <!--<script src="../../dist/3d-force-graph-ar.js"></script>-->
+</head>
+
+<body>
+  <div id="3d-graph"></div>
+
+  <script>
+    const Graph = ForceGraphAR()
+      (document.getElementById('3d-graph'))
+        .jsonUrl('../datasets/miserables.json')
+        .nodeLabel('id')
+        .nodeAutoColorBy('group')
+        .linkThreeObjectExtend(true)
+        .linkThreeObject(link => {
+          // extend link with text sprite
+          const sprite = new SpriteText(`${link.source} > ${link.target}`);
+          sprite.color = 'lightgrey';
+          sprite.textHeight = 1.5;
+          return sprite;
+        })
+        .linkPositionUpdate((sprite, { start, end }) => {
+          const middlePos = Object.assign(...['x', 'y', 'z'].map(c => ({
+              [c]: start[c] + (end[c] - start[c]) / 2 // calc middle point
+          })));
+
+          // Position sprite
+          Object.assign(sprite.position, middlePos);
+        });
+
+    // Spread nodes a little wider
+    Graph.d3Force('charge').strength(-150);
+
+  </script>
+</body>
