@@ -4,6 +4,7 @@ import babel from 'rollup-plugin-babel';
 import { name, homepage, version } from './package.json';
 
 export default {
+  external: ['three'],
   input: 'src/index.js',
   output: [
     {
