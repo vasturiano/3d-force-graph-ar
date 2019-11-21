@@ -10,7 +10,11 @@
 </p>
 
 A web component to represent a graph data structure in augmented reality using a force-directed iterative layout.
-Uses [ar.js](https://github.com/jeromeetienne/AR.js) with [A-Frame](https://aframe.io/) for rendering and [d3-force-3d](https://github.com/vasturiano/d3-force-3d) for the layout physics engine.
+Uses [AR.js](https://github.com/jeromeetienne/AR.js) with [A-Frame](https://aframe.io/) for rendering and [d3-force-3d](https://github.com/vasturiano/d3-force-3d) for the layout physics engine.
+
+To load any of the examples below:
+* Open this [hiro marker image](https://jeromeetienne.github.io/AR.js/data/images/HIRO.jpg) in your desktop browser.
+* Open the example on your phone browser, and point it at your desktop screen.
 
 Check out the examples:
 * [Basic](https://vasturiano.github.io/3d-force-graph-ar/example/basic/) ([source](https://github.com/vasturiano/3d-force-graph-ar/blob/master/example/basic/index.html))
@@ -38,7 +42,7 @@ import ForceGraphAR from '3d-force-graph-ar';
 ```
 or
 ```
-var ForceGraphAR = require('3d-force-graph-ar');
+const ForceGraphAR = require('3d-force-graph-ar');
 ```
 or even
 ```
@@ -46,9 +50,15 @@ or even
 ```
 then
 ```
-var myGraph = ForceGraphAR();
+const myGraph = ForceGraphAR();
 myGraph(<myDOMElement>)
     .graphData(<myData>);
+```
+
+Make sure to load these two script tags in your application, required for `AR.js` + `A-frame` to function properly:
+```
+<script src="//aframe.io/releases/0.9.2/aframe.min.js"></script>
+<script src="//unpkg.com/ar.js/aframe/build/aframe-ar.min.js"></script>
 ```
 
 ## API reference
