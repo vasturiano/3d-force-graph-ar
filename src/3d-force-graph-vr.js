@@ -102,6 +102,10 @@ export default Kapsule({
     scene.setAttribute('arjs', '');
     //scene.setAttribute('stats', null);
 
+    let cameraEntity;
+    scene.appendChild(cameraEntity = document.createElement('a-entity'));
+    cameraEntity.setAttribute('camera', '');
+
     let arMarker;
     scene.appendChild(arMarker = document.createElement('a-marker'));
     arMarker.setAttribute('preset', 'hiro');
