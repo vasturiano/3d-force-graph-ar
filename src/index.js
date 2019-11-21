@@ -1,1 +1,1 @@
-export { default } from "./3d-force-graph-vr.js"
+export { default } from "./3d-force-graph-ar.js"
