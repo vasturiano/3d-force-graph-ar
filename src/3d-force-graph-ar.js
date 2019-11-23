@@ -113,8 +113,8 @@ export default Kapsule({
     // Add forcegraph entity
     arMarker.appendChild(state.forcegraph = document.createElement('a-entity'));
     state.forcegraph.setAttribute('forcegraph', null);
-    state.forcegraph.setAttribute('scale', '0.005 0.005 0.005');
-    state.forcegraph.setAttribute('position', '0 5 0');
+    state.forcegraph.setAttribute('scale', '0.002 0.002 0.002');
+    state.forcegraph.setAttribute('position', '0 0.5 0');
 
     // attach scene
     state.container.appendChild(scene);
