@@ -9,9 +9,9 @@ import Kapsule from 'kapsule';
 export default Kapsule({
 
   props: {
-    width: { default: window.innerWidth, triggerUpdate: false, onChange(width, state) { if(state.container) state.container.style.width = width }},
-    height: { default: window.innerHeight, triggerUpdate: false, onChange(height, state) { if(state.container) state.container.style.height = height }},
-    yOffset: { default: 1 }, // marker size units
+    width: {},
+    height: {},
+    yOffset: { default: 2 }, // marker size units
     glScale: { default: 300 }, // gl units per marker width
     jsonUrl: {},
     graphData: { default: { nodes: [], links: [] }},
@@ -94,9 +94,6 @@ export default Kapsule({
 
     state.container = document.createElement('div');
     domNode.appendChild(state.container);
-    state.container.style.position = 'relative';
-    state.container.style.width = state.width;
-    state.container.style.height = state.height;
 
     // Create scene
     const scene = document.createElement('a-scene');
@@ -104,24 +101,29 @@ export default Kapsule({
     scene.setAttribute('arjs', '');
     //scene.setAttribute('stats', null);
 
-    let cameraEntity;
-    scene.appendChild(cameraEntity = document.createElement('a-entity'));
-    cameraEntity.setAttribute('camera', '');
-
-    let arMarker;
-    scene.appendChild(arMarker = document.createElement('a-marker'));
+    const arMarker = document.createElement('a-marker');
     // add marker attributes
     Object.entries(markerAttrs).forEach(([attr, val]) => arMarker.setAttribute(attr, val));
+    scene.appendChild(arMarker);
 
     // Add forcegraph entity
-    arMarker.appendChild(state.forcegraph = document.createElement('a-entity'));
+    state.forcegraph = document.createElement('a-entity')
     state.forcegraph.setAttribute('forcegraph', null);
+    arMarker.appendChild(state.forcegraph);
+
+    const cameraEntity = document.createElement('a-entity');
+    cameraEntity.setAttribute('camera', '');
+    scene.appendChild(cameraEntity);
 
     // attach scene
     state.container.appendChild(scene);
+    //domNode.appendChild(scene);
   },
 
   update(state, changedProps) {
+    changedProps.hasOwnProperty('width') && state.width && (state.container.style.width = state.width);
+    changedProps.hasOwnProperty('height') && state.height && (state.container.style.height = state.height);
+
     changedProps.hasOwnProperty('glScale') &&
       state.forcegraph.setAttribute('scale', [...new Array(3)].map(() => 1 / state.glScale).join(' '));
 
