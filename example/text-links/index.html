@@ -1,11 +1,10 @@
 <head>
   <style> body { margin: 0; } </style>
 
-  <script src="//unpkg.com/three"></script>
-  <script src="//unpkg.com/three-spritetext"></script>
-
   <script src="//aframe.io/releases/0.9.2/aframe.min.js"></script>
   <script src="//unpkg.com/ar.js/aframe/build/aframe-ar.min.js"></script>
+
+  <script src="//unpkg.com/three-spritetext"></script>
 
   <script src="//unpkg.com/3d-force-graph-ar"></script>
   <!--<script src="../../dist/3d-force-graph-ar.js"></script>-->
@@ -25,7 +24,7 @@
           // extend link with text sprite
           const sprite = new SpriteText(`${link.source} > ${link.target}`);
           sprite.color = 'lightgrey';
-          sprite.textHeight = 3.5;
+          sprite.textHeight = 4;
           return sprite;
         })
         .linkPositionUpdate((sprite, { start, end }) => {
