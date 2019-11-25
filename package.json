@@ -1,6 +1,6 @@
 {
   "name": "3d-force-graph-ar",
-  "version": "0.1.4",
+  "version": "0.2.0",
   "description": "UI component for a 3D force-directed graph in AR",
   "license": "MIT",
   "unpkg": "dist/3d-force-graph-ar.min.js",
