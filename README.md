@@ -63,6 +63,15 @@ Make sure to load these two script tags in your application, required for `AR.js
 
 ## API reference
 
+### Initialisation
+```
+ForceGraphAR({ configOptions })(<domElement>)
+```
+
+| Config options | Description | Default |
+| --- | --- | :--: |
+| <b>markerAttrs</b>: <i>object</i> | Set of attributes that define the marker where the force directed graph is mounted, according to the [<a-marker> specification](https://github.com/jeromeetienne/AR.js/tree/master/aframe#a-marker). | `{ preset: 'hiro' }` |
+
 ### Data input
 
 | Method | Description | Default |
@@ -77,8 +86,10 @@ Make sure to load these two script tags in your application, required for `AR.js
 
 | Method | Description | Default |
 | --- | --- | :--: |
-| <b>width</b>([<i>px</i>]) | Getter/setter for the canvas width. | *&lt;window width&gt;* |
-| <b>height</b>([<i>px</i>]) | Getter/setter for the canvas height. | *&lt;window height&gt;* |
+| <b>yOffset</b>([<i>number</i>]) | Getter/setter for the offset distance above the marker where to place the center coordinates `<0,0,0>` of the force directed graph. Measured in terms of marker width units. | `1.5` |
+| <b>glScale</b>([<i>number</i>]) | Getter/setter for the translation scale between real world distances and WebGL units, determining the overall size of the graph. Defined in terms of how many GL units fit in a full marker width. | `200` |
+| <b>width</b>([<i>px</i>]) | Getter/setter for the viewport canvas width. | *&lt;window width&gt;* |
+| <b>height</b>([<i>px</i>]) | Getter/setter for the viewport canvas height. | *&lt;window height&gt;* |
 
 ### Node styling
 
