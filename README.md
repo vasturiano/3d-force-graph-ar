@@ -6,7 +6,7 @@
 [![Dependencies][dependencies-img]][dependencies-url]
 
 <p align="center">
-  <a href="https://vasturiano.github.io/3d-force-graph-ar/example/async-load/"><img width="80%" src="https://vasturiano.github.io/3d-force-graph-ar/example/async-load/preview.png"></a>
+  <a href="https://vasturiano.github.io/3d-force-graph-ar/example/async-load/"><img width="80%" src="https://vasturiano.github.io/3d-force-graph-ar/example/async-load/preview.jpg"></a>
 </p>
 
 A web component to represent a graph data structure in augmented reality using a force-directed iterative layout.
