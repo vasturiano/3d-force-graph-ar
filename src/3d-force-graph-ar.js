@@ -98,8 +98,7 @@ export default Kapsule({
     // Create scene
     const scene = document.createElement('a-scene');
     scene.setAttribute('embedded', '');
-    scene.setAttribute('arjs', '');
-    //scene.setAttribute('stats', null);
+    scene.setAttribute('arjs', 'debugUIEnabled: false;');
 
     const arMarker = document.createElement('a-marker');
     // add marker attributes
