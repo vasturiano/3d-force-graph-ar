@@ -11,6 +11,8 @@ export default Kapsule({
   props: {
     width: { default: window.innerWidth, triggerUpdate: false, onChange(width, state) { if(state.container) state.container.style.width = width }},
     height: { default: window.innerHeight, triggerUpdate: false, onChange(height, state) { if(state.container) state.container.style.height = height }},
+    yOffset: { default: 1 }, // marker size units
+    glScale: { default: 300 }, // gl units per marker width
     jsonUrl: {},
     graphData: { default: { nodes: [], links: [] }},
     numDimensions: { default: 3 },
@@ -86,7 +88,7 @@ export default Kapsule({
     }
   },
 
-  init(domNode, state) {
+  init(domNode, state, { markerAttrs = { preset: 'hiro' }} = {}) {
     // Wipe DOM
     domNode.innerHTML = '';
 
@@ -108,19 +110,24 @@ export default Kapsule({
 
     let arMarker;
     scene.appendChild(arMarker = document.createElement('a-marker'));
-    arMarker.setAttribute('preset', 'hiro');
+    // add marker attributes
+    Object.entries(markerAttrs).forEach(([attr, val]) => arMarker.setAttribute(attr, val));
 
     // Add forcegraph entity
     arMarker.appendChild(state.forcegraph = document.createElement('a-entity'));
     state.forcegraph.setAttribute('forcegraph', null);
-    state.forcegraph.setAttribute('scale', '0.002 0.002 0.002');
-    state.forcegraph.setAttribute('position', '0 0.5 0');
 
     // attach scene
     state.container.appendChild(scene);
   },
 
-  update(state) {
+  update(state, changedProps) {
+    changedProps.hasOwnProperty('glScale') &&
+      state.forcegraph.setAttribute('scale', [...new Array(3)].map(() => 1 / state.glScale).join(' '));
+
+    changedProps.hasOwnProperty('yOffset') &&
+    state.forcegraph.setAttribute('position', `0 ${state.yOffset} 0`);
+
     const passThroughProps = [
       'jsonUrl',
       'numDimensions',
