@@ -11,8 +11,8 @@ export default Kapsule({
   props: {
     width: {},
     height: {},
-    yOffset: { default: 2 }, // marker size units
-    glScale: { default: 300 }, // gl units per marker width
+    yOffset: { default: 1.5 }, // marker size units
+    glScale: { default: 200 }, // gl units per marker width
     jsonUrl: {},
     graphData: { default: { nodes: [], links: [] }},
     numDimensions: { default: 3 },
