@@ -86,8 +86,8 @@ ForceGraphAR({ configOptions })(<domElement>)
 
 | Method | Description | Default |
 | --- | --- | :--: |
-| <b>yOffset</b>([<i>number</i>]) | Getter/setter for the offset distance above the marker where to place the center coordinates `<0,0,0>` of the force directed graph. Measured in terms of marker width units. | `1.5` |
-| <b>glScale</b>([<i>number</i>]) | Getter/setter for the translation scale between real world distances and WebGL units, determining the overall size of the graph. Defined in terms of how many GL units fit in a full marker width. | `200` |
+| <b>yOffset</b>([<i>number</i>]) | Getter/setter for the offset distance above the marker where to place the center coordinates `<0,0,0>` of the force directed graph. Measured in terms of marker width units. | 1.5 |
+| <b>glScale</b>([<i>number</i>]) | Getter/setter for the translation scale between real world distances and WebGL units, determining the overall size of the graph. Defined in terms of how many GL units fit in a full marker width. | 200 |
 | <b>width</b>([<i>px</i>]) | Getter/setter for the viewport canvas width. | *&lt;window width&gt;* |
 | <b>height</b>([<i>px</i>]) | Getter/setter for the viewport canvas height. | *&lt;window height&gt;* |
 
