@@ -70,7 +70,7 @@ ForceGraphAR({ configOptions })(<domElement>)
 
 | Config options | Description | Default |
 | --- | --- | :--: |
-| <b>markerAttrs</b>: <i>object</i> | Set of attributes that define the marker where the force directed graph is mounted, according to the [<a-marker> specification](https://github.com/jeromeetienne/AR.js/tree/master/aframe#a-marker). | `{ preset: 'hiro' }` |
+| <b>markerAttrs</b>: <i>object</i> | Set of attributes that define the marker where the force directed graph is mounted, according to the [a-marker specification](https://github.com/jeromeetienne/AR.js/tree/master/aframe#a-marker). | `{ preset: 'hiro' }` |
 
 ### Data input
 
