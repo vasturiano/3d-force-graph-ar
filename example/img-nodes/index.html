@@ -31,10 +31,16 @@
         const imgTexture = new THREE.TextureLoader().load(`./imgs/${img}`);
         const material = new THREE.SpriteMaterial({ map: imgTexture });
         const sprite = new THREE.Sprite(material);
-        sprite.scale.set(12, 12);
+        sprite.scale.set(20, 20);
 
         return sprite;
       })
-      .graphData(gData);
+      .graphData(gData)
+
+      .glScale(80)
+      .yOffset(1)
+      .linkWidth(1)
+      .linkOpacity(0.4)
+      .linkColor(() => 'darkgrey');
   </script>
 </body>

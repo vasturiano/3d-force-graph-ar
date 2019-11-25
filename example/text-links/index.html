@@ -25,7 +25,7 @@
           // extend link with text sprite
           const sprite = new SpriteText(`${link.source} > ${link.target}`);
           sprite.color = 'lightgrey';
-          sprite.textHeight = 1.5;
+          sprite.textHeight = 3.5;
           return sprite;
         })
         .linkPositionUpdate((sprite, { start, end }) => {
@@ -35,7 +35,11 @@
 
           // Position sprite
           Object.assign(sprite.position, middlePos);
-        });
+        })
+        .nodeRelSize(5)
+        .nodeOpacity(0.9)
+        .linkOpacity(0.4)
+        .linkColor(() => 'darkgrey');
 
     // Spread nodes a little wider
     Graph.d3Force('charge').strength(-150);

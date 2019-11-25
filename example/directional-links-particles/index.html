@@ -18,6 +18,14 @@
         .nodeLabel('id')
         .nodeAutoColorBy('group')
         .linkDirectionalParticles("value")
-        .linkDirectionalParticleSpeed(d => d.value * 0.001);
+        .linkDirectionalParticleSpeed(d => d.value * 0.001)
+        .linkDirectionalParticleWidth(3)
+
+        .glScale(150)
+        .yOffset(2)
+        .nodeRelSize(5)
+        .nodeOpacity(0.9)
+        .linkOpacity(0.4)
+        .linkColor(() => 'darkgrey');
   </script>
 </body>

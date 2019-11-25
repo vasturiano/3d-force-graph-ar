@@ -18,6 +18,14 @@
     const Graph = ForceGraphAR()(elem)
       .jsonUrl('../datasets/blocks.json')
       .nodeAutoColorBy('user')
-      .nodeLabel(node => `${node.user}: ${node.description}`);
+      .nodeLabel(node => `${node.user}: ${node.description}`)
+
+      .glScale(1000)
+      .yOffset(2)
+      .nodeRelSize(8)
+      .linkWidth(2)
+      .nodeOpacity(0.9)
+      .linkOpacity(0.4)
+      .linkColor(() => 'darkgrey');
   </script>
 </body>

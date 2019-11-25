@@ -13,7 +13,7 @@
 
   <script>
     // Random tree
-    const N = 300;
+    const N = 200;
     const gData = {
       nodes: [...Array(N).keys()].map(i => ({ id: i })),
       links: [...Array(N).keys()]
@@ -26,6 +26,12 @@
 
     const Graph = ForceGraphAR()
       (document.getElementById('3d-graph'))
-        .graphData(gData);
+        .graphData(gData)
+        .nodeRelSize(10)
+        .linkWidth(3)
+        .nodeOpacity(0.9)
+        .linkOpacity(0.4)
+        .nodeColor(() => 'firebrick')
+        .linkColor(() => 'darkgrey');
   </script>
 </body>

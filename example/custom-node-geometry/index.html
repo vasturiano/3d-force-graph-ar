@@ -28,18 +28,18 @@
       (document.getElementById('3d-graph'))
         .nodeThreeObject(({ id }) => new THREE.Mesh(
           [
-            new THREE.BoxGeometry(Math.random() * 20, Math.random() * 20, Math.random() * 20),
-            new THREE.ConeGeometry(Math.random() * 10, Math.random() * 20),
-            new THREE.CylinderGeometry(Math.random() * 10, Math.random() * 10, Math.random() * 20),
-            new THREE.DodecahedronGeometry(Math.random() * 10),
-            new THREE.SphereGeometry(Math.random() * 10),
-            new THREE.TorusGeometry(Math.random() * 10, Math.random() * 2),
-            new THREE.TorusKnotGeometry(Math.random() * 10, Math.random() * 2)
+            new THREE.BoxGeometry(Math.random() * 40, Math.random() * 40, Math.random() * 40),
+            new THREE.ConeGeometry(Math.random() * 20, Math.random() * 40),
+            new THREE.CylinderGeometry(Math.random() * 20, Math.random() * 20, Math.random() * 40),
+            new THREE.DodecahedronGeometry(Math.random() * 20),
+            new THREE.SphereGeometry(Math.random() * 20),
+            new THREE.TorusGeometry(Math.random() * 20, Math.random() * 4),
+            new THREE.TorusKnotGeometry(Math.random() * 20, Math.random() * 4)
           ][id%7],
           new THREE.MeshLambertMaterial({
             color: Math.round(Math.random() * Math.pow(2, 24)),
             transparent: true,
-            opacity: 0.75
+            opacity: 0.9
           })
         ))
         .graphData(gData);

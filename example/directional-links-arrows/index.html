@@ -27,8 +27,15 @@
     const Graph = ForceGraphAR()
       (document.getElementById('3d-graph'))
       .graphData(gData)
-      .linkDirectionalArrowLength(3)
+      .linkDirectionalArrowLength(8)
       .linkDirectionalArrowRelPos(1)
-      .linkCurvature(0.25);
+      .linkCurvature(0.25)
+
+      .nodeRelSize(10)
+      .linkWidth(1)
+      .nodeOpacity(0.9)
+      .linkOpacity(0.4)
+      .nodeColor(() => 'firebrick')
+      .linkColor(() => 'darkgrey');
   </script>
 </body>

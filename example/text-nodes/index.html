@@ -18,13 +18,21 @@
     const Graph = ForceGraphAR()
       (document.getElementById('3d-graph'))
         .jsonUrl('../datasets/miserables.json')
+
         .nodeAutoColorBy('group')
         .nodeThreeObject(node => {
           const sprite = new SpriteText(node.id);
           sprite.color = node.color;
-          sprite.textHeight = 8;
+          sprite.textHeight = 15;
           return sprite;
-        });
+        })
+
+        .glScale(150)
+        .yOffset(2)
+        .nodeRelSize(5)
+        .nodeOpacity(0.9)
+        .linkOpacity(0.4)
+        .linkColor(() => 'darkgrey');
 
   </script>
 </body>

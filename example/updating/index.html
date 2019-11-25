@@ -18,7 +18,13 @@
     };
     const Graph = ForceGraphAR()
       (document.getElementById("3d-graph"))
-        .graphData(initData);
+        .graphData(initData)
+        .nodeRelSize(10)
+        .linkWidth(3)
+        .nodeOpacity(0.9)
+        .linkOpacity(0.4)
+        .nodeColor(() => 'firebrick')
+        .linkColor(() => 'darkgrey');
 
     setInterval(() => {
       const { nodes, links } = Graph.graphData();

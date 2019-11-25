@@ -13,7 +13,7 @@
 
   <script>
     // Random tree
-    const NODES = 300;
+    const NODES = 100;
     const GROUPS = 12;
     const gData = {
       nodes: [...Array(NODES).keys()].map(i => ({
@@ -33,6 +33,9 @@
         .nodeAutoColorBy('group')
         .linkAutoColorBy(d => gData.nodes[d.source].group)
         .linkOpacity(0.5)
+        .nodeRelSize(10)
+        .linkWidth(3)
+        .nodeOpacity(0.9)
         .graphData(gData);
   </script>
 </body>

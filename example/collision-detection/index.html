@@ -36,7 +36,14 @@
       .d3Force('box', forceBox(Graph.nodeRelSize() * N))
 
       // Add nodes
-      .graphData({ nodes, links: [] });
+      .graphData({ nodes, links: [] })
+
+      .nodeRelSize(10)
+      .linkWidth(3)
+      .nodeOpacity(0.9)
+      .linkOpacity(0.4)
+      .nodeColor(() => 'firebrick')
+      .linkColor(() => 'darkgrey');
 
     //
 

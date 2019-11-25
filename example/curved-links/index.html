@@ -57,6 +57,14 @@
       .linkCurvature('curvature')
       .linkCurveRotation('rotation')
       .linkDirectionalParticles(2)
-      .graphData(gData);
+
+      .graphData(gData)
+      .yOffset(0.5)
+      .nodeRelSize(6)
+      .linkWidth(2)
+      .nodeOpacity(0.9)
+      .linkOpacity(0.4)
+      .nodeColor(() => 'firebrick')
+      .linkColor(() => 'darkgrey');
   </script>
 </body>
