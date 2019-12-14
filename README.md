@@ -57,7 +57,7 @@ myGraph(<myDOMElement>)
 
 Make sure to load these two script tags in your application, required for `AR.js` + `A-frame` to function properly:
 ```
-<script src="//aframe.io/releases/0.9.2/aframe.min.js"></script>
+<script src="//aframe.io/releases/1.0.0/aframe.min.js"></script>
 <script src="//unpkg.com/ar.js/aframe/build/aframe-ar.min.js"></script>
 ```
 
