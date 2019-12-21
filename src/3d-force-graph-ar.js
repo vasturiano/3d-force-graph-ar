@@ -67,24 +67,24 @@ export default Kapsule({
   },
 
   methods: {
-    d3Force: function(state, ...args) {
-      const aframeComp = state.forcegraph.components.forcegraph;
-      const returnVal = aframeComp.d3Force(...args);
+    // pass-through methods
+    ...Object.assign({}, ...[
+      'emitParticle',
+      'd3Force',
+      'd3ReheatSimulation',
+      'refresh'
+    ].map(method => ({
+      [method]: function (state, ...args) {
+        const aframeComp = state.forcegraph.components.forcegraph;
+        const returnVal = aframeComp[method](...args);
 
-      return returnVal === aframeComp
-        ? this // chain based on this object, not the inner aframe component
-        : returnVal;
-    },
-    d3ReheatSimulation: function(state) {
-      state.forcegraph.components.forcegraph.d3ReheatSimulation();
-      return this;
-    },
-    refresh: function(state) {
-      state.forcegraph.components.forcegraph.refresh();
-      return this;
-    },
+        return returnVal === aframeComp
+          ? this // chain based on this object, not the inner aframe component
+          : returnVal;
+      }
+    }))),
     _destructor: function() {
-      this.graphData({ nodes: [], links: []});
+      this.graphData({ nodes: [], links: [] });
     }
   },
 
@@ -184,18 +184,12 @@ export default Kapsule({
 
     const newProps = Object.assign({},
       ...Object.entries(state)
-        .filter(([prop, val]) => passThroughProps.indexOf(prop) != -1 && val !== undefined && val !== null)
-        .map(([key, val]) => ({ [key]: serialize(val) })),
+        .filter(([prop, val]) => changedProps.hasOwnProperty(prop) && passThroughProps.indexOf(prop) != -1 && val !== undefined && val !== null)
+        .map(([key, val]) => ({ [key]: val })),
       ...Object.entries(state.graphData)
-        .map(([key, val]) => ({ [key]: JSON.stringify(val) })) // convert nodes & links to strings
+        .map(([key, val]) => ({ [key]: val })) // pass nodes & links as separate props
     );
 
-    state.forcegraph.setAttribute('forcegraph', newProps, true);
-
-    //
-
-    function serialize(p) {
-      return p instanceof Function ? p.toString() : p; // convert functions to strings
-    }
+    state.forcegraph.setAttribute('forcegraph', newProps);
   }
 });
