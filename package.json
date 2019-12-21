@@ -37,19 +37,19 @@
     "dist/**/*"
   ],
   "dependencies": {
-    "aframe-forcegraph-component": "^2.22.2",
+    "aframe-forcegraph-component": "^2.24.0",
     "kapsule": "^1.12.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.7.5",
+    "@babel/core": "^7.7.7",
     "@babel/plugin-proposal-class-properties": "^7.7.4",
-    "@babel/plugin-proposal-object-rest-spread": "^7.7.4",
-    "@babel/preset-env": "^7.7.6",
+    "@babel/plugin-proposal-object-rest-spread": "^7.7.7",
+    "@babel/preset-env": "^7.7.7",
     "rimraf": "^3.0.0",
-    "rollup": "^1.27.12",
+    "rollup": "^1.27.13",
     "rollup-plugin-babel": "^4.3.3",
     "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-node-resolve": "^5.2.0",
-    "terser": "^4.4.2"
+    "terser": "^4.4.3"
   }
 }
