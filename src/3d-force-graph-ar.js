@@ -20,8 +20,6 @@ export default Kapsule({
     dagLevelDistance: {},
     nodeRelSize: { default: 4 }, // volume per val unit
     nodeId: { default: 'id' },
-    nodeLabel: { default: 'name' },
-    nodeDesc: { default: 'desc' },
     nodeVal: { default: 'val' },
     nodeResolution: { default: 8 }, // how many slice segments in the sphere's circumference
     nodeVisibility: { default: true },
@@ -32,8 +30,6 @@ export default Kapsule({
     nodeThreeObjectExtend: { default: false },
     linkSource: { default: 'source' },
     linkTarget: { default: 'target' },
-    linkLabel: { default: 'name' },
-    linkDesc: { default: 'desc' },
     linkHoverPrecision: { default: 2 },
     linkVisibility: { default: true },
     linkColor: { default: 'color' },
@@ -56,6 +52,8 @@ export default Kapsule({
     linkDirectionalParticleWidth: { default: 0.5 },
     linkDirectionalParticleColor: {},
     linkDirectionalParticleResolution: { default: 4 }, // how many slice segments in the particle sphere's circumference
+    onNodeCenterHover: {},
+    onLinkCenterHover: {},
     forceEngine: { default: 'd3' }, // d3 or ngraph
     d3AlphaDecay: { default: 0.0228 },
     d3VelocityDecay: { default: 0.4 },
@@ -136,8 +134,6 @@ export default Kapsule({
       'dagLevelDistance',
       'nodeRelSize',
       'nodeId',
-      'nodeLabel',
-      'nodeDesc',
       'nodeVal',
       'nodeResolution',
       'nodeVisibility',
@@ -148,8 +144,6 @@ export default Kapsule({
       'nodeThreeObjectExtend',
       'linkSource',
       'linkTarget',
-      'linkLabel',
-      'linkDesc',
       'linkHoverPrecision',
       'linkVisibility',
       'linkColor',
@@ -172,6 +166,8 @@ export default Kapsule({
       'linkDirectionalParticleWidth',
       'linkDirectionalParticleColor',
       'linkDirectionalParticleResolution',
+      'onNodeCenterHover',
+      'onLinkCenterHover',
       'forceEngine',
       'd3AlphaDecay',
       'd3VelocityDecay',
