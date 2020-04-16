@@ -55,6 +55,7 @@ export default Kapsule({
     onNodeCenterHover: {},
     onLinkCenterHover: {},
     forceEngine: { default: 'd3' }, // d3 or ngraph
+    d3AlphaMin: { default: 0 },
     d3AlphaDecay: { default: 0.0228 },
     d3VelocityDecay: { default: 0.4 },
     warmupTicks: { default: 0 }, // how many times to tick the force engine at init before starting to render
@@ -169,6 +170,7 @@ export default Kapsule({
       'onNodeCenterHover',
       'onLinkCenterHover',
       'forceEngine',
+      'd3AlphaMin',
       'd3AlphaDecay',
       'd3VelocityDecay',
       'warmupTicks',

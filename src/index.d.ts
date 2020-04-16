@@ -5,7 +5,7 @@ export interface ConfigOptions {
 }
 
 // don't surface these internal props from inner ThreeForceGraph
-type ExcludedInnerProps = 'onLoading' | 'onFinishLoading' | 'onUpdate' | 'onFinishUpdate' | 'tickFrame';
+type ExcludedInnerProps = 'onLoading' | 'onFinishLoading' | 'onUpdate' | 'onFinishUpdate' | 'tickFrame' | 'd3AlphaTarget';
 
 export interface ForceGraphARGenericInstance<ChainableInstance>
     extends Omit<ThreeForceGraphGeneric<ChainableInstance>, ExcludedInnerProps> {
