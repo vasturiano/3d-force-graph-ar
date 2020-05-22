@@ -6,7 +6,7 @@
   "unpkg": "dist/3d-force-graph-ar.min.js",
   "main": "dist/3d-force-graph-ar.common.js",
   "module": "dist/3d-force-graph-ar.module.js",
-  "types": "dist/3d-force-graph-ar.module.d.ts",
+  "types": "dist/3d-force-graph-ar.d.ts",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/vasturiano/3d-force-graph-ar.git"
