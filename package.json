@@ -36,7 +36,7 @@
     "dist/**/*"
   ],
   "dependencies": {
-    "aframe-forcegraph-component": "^2.27.0",
+    "aframe-forcegraph-component": "^2.27.1",
     "kapsule": "^1.13.3"
   },
   "devDependencies": {
