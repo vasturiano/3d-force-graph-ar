@@ -18,6 +18,8 @@ export default Kapsule({
     numDimensions: { default: 3 },
     dagMode: {},
     dagLevelDistance: {},
+    dagNodeFilter: { default: () => true },
+    onDagError: { default: undefined },
     nodeRelSize: { default: 4 }, // volume per val unit
     nodeId: { default: 'id' },
     nodeVal: { default: 'val' },
@@ -135,6 +137,8 @@ export default Kapsule({
       'numDimensions',
       'dagMode',
       'dagLevelDistance',
+      'dagNodeFilter',
+      'onDagError',
       'nodeRelSize',
       'nodeId',
       'nodeVal',
