@@ -1,7 +1,7 @@
 <head>
   <style> body { margin: 0; } </style>
 
-  <script src="//aframe.io/releases/1.0.0/aframe.min.js"></script>
+  <script src="//unpkg.com/aframe"></script>
   <script src="//unpkg.com/ar.js/aframe/build/aframe-ar.min.js"></script>
 
   <script src="//unpkg.com/3d-force-graph-ar"></script>
@@ -17,7 +17,6 @@
         .jsonUrl('../datasets/miserables.json')
         .glScale(160)
         .yOffset(1.8)
-        .nodeLabel('id')
         .nodeAutoColorBy('group')
         .nodeRelSize(5)
         .linkWidth(1.5)

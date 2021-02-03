@@ -1,7 +1,7 @@
 <head>
   <style> body { margin: 0; } </style>
 
-  <script src="//aframe.io/releases/1.0.0/aframe.min.js"></script>
+  <script src="//unpkg.com/aframe"></script>
   <script src="//unpkg.com/ar.js/aframe/build/aframe-ar.min.js"></script>
 
   <script src="//unpkg.com/3d-force-graph-ar"></script>
@@ -15,7 +15,6 @@
     const Graph = ForceGraphAR()
       (document.getElementById('3d-graph'))
         .jsonUrl('../datasets/miserables.json')
-        .nodeLabel('id')
         .nodeAutoColorBy('group')
         .linkDirectionalParticles("value")
         .linkDirectionalParticleSpeed(d => d.value * 0.001)
