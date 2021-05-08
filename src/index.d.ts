@@ -23,8 +23,10 @@ export interface ForceGraphARGenericInstance<ChainableInstance>
   glScale(glUnits: number): ChainableInstance;
 
   // Interaction
-  onNodeCenterHover(callback: (node: object | null, previousNode: object | null) => void): ChainableInstance;
-  onLinkCenterHover(callback: (link: object | null, previousLink: object | null) => void): ChainableInstance;
+  onNodeHover(callback: (node: object | null, previousNode: object | null) => void): ChainableInstance;
+  onLinkHover(callback: (link: object | null, previousLink: object | null) => void): ChainableInstance;
+  onNodeClick(callback: (node: object) => void): ChainableInstance;
+  onLinkClick(callback: (link: object) => void): ChainableInstance;
 }
 
 export type ForceGraphARInstance = ForceGraphARGenericInstance<ForceGraphARInstance>;

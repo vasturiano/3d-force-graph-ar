@@ -32,7 +32,6 @@ export default Kapsule({
     nodeThreeObjectExtend: { default: false },
     linkSource: { default: 'source' },
     linkTarget: { default: 'target' },
-    linkHoverPrecision: { default: 2 },
     linkVisibility: { default: true },
     linkColor: { default: 'color' },
     linkAutoColorBy: {},
@@ -54,8 +53,10 @@ export default Kapsule({
     linkDirectionalParticleWidth: { default: 0.5 },
     linkDirectionalParticleColor: {},
     linkDirectionalParticleResolution: { default: 4 }, // how many slice segments in the particle sphere's circumference
-    onNodeCenterHover: {},
-    onLinkCenterHover: {},
+    onNodeHover: {},
+    onNodeClick: {},
+    onLinkHover: {},
+    onLinkClick: {},
     forceEngine: { default: 'd3' }, // d3 or ngraph
     d3AlphaMin: { default: 0 },
     d3AlphaDecay: { default: 0.0228 },
@@ -108,8 +109,14 @@ export default Kapsule({
     Object.entries(markerAttrs).forEach(([attr, val]) => arMarker.setAttribute(attr, val));
     scene.appendChild(arMarker);
 
+    // Setup raycaster cursor
+    let mouseCursor;
+    scene.appendChild(mouseCursor = document.createElement('a-entity'));
+    mouseCursor.setAttribute('cursor' /*, 'rayOrigin: mouse'*/); // mouse raycaster has accuracy issues in ar.js: https://github.com/AR-js-org/AR.js/issues/40
+    mouseCursor.setAttribute('raycaster', 'objects: [forcegraph]');
+
     // Add forcegraph entity
-    state.forcegraph = document.createElement('a-entity')
+    state.forcegraph = document.createElement('a-entity');
     state.forcegraph.setAttribute('forcegraph', null);
     arMarker.appendChild(state.forcegraph);
 
@@ -151,7 +158,6 @@ export default Kapsule({
       'nodeThreeObjectExtend',
       'linkSource',
       'linkTarget',
-      'linkHoverPrecision',
       'linkVisibility',
       'linkColor',
       'linkAutoColorBy',
@@ -173,8 +179,10 @@ export default Kapsule({
       'linkDirectionalParticleWidth',
       'linkDirectionalParticleColor',
       'linkDirectionalParticleResolution',
-      'onNodeCenterHover',
-      'onLinkCenterHover',
+      'onNodeHover',
+      'onNodeClick',
+      'onLinkHover',
+      'onLinkClick',
       'forceEngine',
       'd3AlphaMin',
       'd3AlphaDecay',
@@ -189,7 +197,7 @@ export default Kapsule({
 
     const newProps = Object.assign({},
       ...Object.entries(state)
-        .filter(([prop, val]) => changedProps.hasOwnProperty(prop) && passThroughProps.indexOf(prop) != -1 && val !== undefined && val !== null)
+        .filter(([prop, val]) => changedProps.hasOwnProperty(prop) && passThroughProps.indexOf(prop) !== -1 && val !== undefined && val !== null)
         .map(([key, val]) => ({ [key]: val })),
       ...Object.entries(state.graphData)
         .map(([key, val]) => ({ [key]: val })) // pass nodes & links as separate props

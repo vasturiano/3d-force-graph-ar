@@ -137,9 +137,10 @@ ForceGraphAR({ configOptions })(<domElement>)
 
 | Method | Description | Default |
 | --- | --- | :--: |
-| <b>onNodeCenterHover</b>([<i>fn</i>]) | Callback function for node hover events at the center of the viewport. The node object (or `null` if there's no node under the central line of sight) is included as the first argument, and the previous node object (or `null`) as second argument. | - |
-| <b>onLinkCenterHover</b>([<i>fn</i>]) | Callback function for link hover events at the center of the viewport. The link object (or `null` if there's no link under the central line of sight) is included as the first argument, and the previous link object (or `null`) as second argument. | - |
-| <b>linkHoverPrecision</b>([<i>int</i>]) | Whether to trigger link hover events when gazing the link closely (low value) or from far away (high value). | 2 |
+| <b>onNodeHover</b>([<i>fn</i>]) | Callback function for node hover events. The node object (or `null` if there's no node directly under the pointer line of sight) is included as the first argument, and the previous node object (or `null`) as second argument. | - |
+| <b>onLinkHover</b>([<i>fn</i>]) | Callback function for link hover events. The link object (or `null` if there's no link directly under the pointer line of sight) is included as the first argument, and the previous link object (or `null`) as second argument. | - |
+| <b>onNodeClick</b>([<i>fn</i>]) | Callback function for node click events. The node object is included as sole argument. | - |
+| <b>onLinkClick</b>([<i>fn</i>]) | Callback function for link click events. The link object is included as sole argument. | - |
 
 ### Force engine configuration
 
