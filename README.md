@@ -10,7 +10,7 @@
 </p>
 
 A web component to represent a graph data structure in augmented reality using a force-directed iterative layout.
-Uses [AR.js](https://github.com/jeromeetienne/AR.js) with [A-Frame](https://aframe.io/) for rendering and [d3-force-3d](https://github.com/vasturiano/d3-force-3d) for the layout physics engine.
+Uses [AR.js](https://github.com/AR-js-org/AR.js) with [A-Frame](https://aframe.io/) for rendering and [d3-force-3d](https://github.com/vasturiano/d3-force-3d) for the layout physics engine.
 
 To load any of the examples below:
 * Open this [hiro marker image](https://jeromeetienne.github.io/AR.js/data/images/HIRO.jpg) in your desktop browser.
