@@ -130,8 +130,8 @@ export default Kapsule({
   },
 
   update(state, changedProps) {
-    changedProps.hasOwnProperty('width') && state.width && (state.container.style.width = state.width);
-    changedProps.hasOwnProperty('height') && state.height && (state.container.style.height = state.height);
+    changedProps.hasOwnProperty('width') && state.width && (state.container.style.width = `${state.width}px`);
+    changedProps.hasOwnProperty('height') && state.height && (state.container.style.height = `${state.height}px`);
 
     changedProps.hasOwnProperty('glScale') &&
       state.forcegraph.setAttribute('scale', [...new Array(3)].map(() => 1 / state.glScale).join(' '));
