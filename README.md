@@ -3,7 +3,7 @@
 
 [![NPM package][npm-img]][npm-url]
 [![Build Size][build-size-img]][build-size-url]
-[![Dependencies][dependencies-img]][dependencies-url]
+[![NPM Downloads][npm-downloads-img]][npm-downloads-url]
 
 <p align="center">
   <a href="https://vasturiano.github.io/3d-force-graph-ar/example/async-load/"><img width="80%" src="https://vasturiano.github.io/3d-force-graph-ar/example/async-load/preview.jpg"></a>
@@ -13,7 +13,7 @@ A web component to represent a graph data structure in augmented reality using a
 Uses [AR.js](https://github.com/AR-js-org/AR.js) with [A-Frame](https://aframe.io/) for rendering and [d3-force-3d](https://github.com/vasturiano/d3-force-3d) for the layout physics engine.
 
 To load any of the examples below:
-* Open this [hiro marker image](https://jeromeetienne.github.io/AR.js/data/images/HIRO.jpg) in your desktop browser.
+* Open this [hiro marker image](https://ar-js-org.github.io/AR.js/data/images/HIRO.jpg) in your desktop browser.
 * Open the example on your phone browser, and point it at your desktop screen.
 
 Check out the examples:
@@ -38,40 +38,40 @@ And check out the [React bindings](https://github.com/vasturiano/react-force-gra
 
 ## Quick start
 
-```
+```js
 import ForceGraphAR from '3d-force-graph-ar';
 ```
 or
-```
+```js
 const ForceGraphAR = require('3d-force-graph-ar');
 ```
 or even
-```
+```html
 <script src="//unpkg.com/3d-force-graph-ar"></script>
 ```
 then
-```
+```js
 const myGraph = ForceGraphAR();
 myGraph(<myDOMElement>)
     .graphData(<myData>);
 ```
 
 Make sure to load these two script tags in your application, required for `AR.js` + `A-frame` to function properly:
-```
-<script src="//aframe.io/releases/1.0.0/aframe.min.js"></script>
-<script src="//unpkg.com/ar.js/aframe/build/aframe-ar.min.js"></script>
+```html
+<script src="//unpkg.com/aframe"></script>
+<script src="//unpkg.com/@ar-js-org/ar.js"></script>
 ```
 
 ## API reference
 
 ### Initialisation
-```
+```js
 ForceGraphAR({ configOptions })(<domElement>)
 ```
 
 | Config options | Description | Default |
 | --- | --- | :--: |
-| <b>markerAttrs</b>: <i>object</i> | Set of attributes that define the marker where the force directed graph is mounted, according to the [a-marker specification](https://github.com/jeromeetienne/AR.js/tree/master/aframe#a-marker). | `{ preset: 'hiro' }` |
+| <b>markerAttrs</b>: <i>object</i> | Set of attributes that define the marker where the force directed graph is mounted, according to the [a-marker specification](https://ar-js-org.github.io/AR.js-Docs/marker-based/). | `{ preset: 'hiro' }` |
 
 ### Data input
 
@@ -170,7 +170,7 @@ ForceGraphAR({ configOptions })(<domElement>)
 | <b>getGraphBbox</b>() | Returns the current bounding box of all the nodes in the graph, formatted as `{ x: [<num>, <num>], y: [<num>, <num>], z: [<num>, <num>] }`. ||
 
 ### Input JSON syntax
-```
+```json
 {
     "nodes": [ 
         { 
@@ -199,9 +199,9 @@ ForceGraphAR({ configOptions })(<domElement>)
 
 [![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=L398E7PKP47E8&currency_code=USD&source=url) If this project has helped you and you'd like to contribute back, you can always [buy me a ☕](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=L398E7PKP47E8&currency_code=USD&source=url)!
 
-[npm-img]: https://img.shields.io/npm/v/3d-force-graph-ar.svg
+[npm-img]: https://img.shields.io/npm/v/3d-force-graph-ar
 [npm-url]: https://npmjs.org/package/3d-force-graph-ar
-[build-size-img]: https://img.shields.io/bundlephobia/minzip/3d-force-graph-ar.svg
+[build-size-img]: https://img.shields.io/bundlephobia/minzip/3d-force-graph-ar
 [build-size-url]: https://bundlephobia.com/result?p=3d-force-graph-ar
-[dependencies-img]: https://img.shields.io/david/vasturiano/3d-force-graph-ar.svg
-[dependencies-url]: https://david-dm.org/vasturiano/3d-force-graph-ar
+[npm-downloads-img]: https://img.shields.io/npm/dt/3d-force-graph-ar
+[npm-downloads-url]: https://www.npmtrends.com/3d-force-graph-ar
