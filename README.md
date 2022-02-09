@@ -167,6 +167,8 @@ ForceGraphAR({ configOptions })(<domElement>)
 
 ### Utility
 
+| Method | Description | Default |
+| --- | --- | :--: |
 | <b>getGraphBbox</b>() | Returns the current bounding box of all the nodes in the graph, formatted as `{ x: [<num>, <num>], y: [<num>, <num>], z: [<num>, <num>] }`. ||
 
 ### Input JSON syntax
