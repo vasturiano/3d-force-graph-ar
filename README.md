@@ -12,6 +12,10 @@
 A web component to represent a graph data structure in augmented reality using a force-directed iterative layout.
 Uses [AR.js](https://github.com/AR-js-org/AR.js) with [A-Frame](https://aframe.io/) for rendering and [d3-force-3d](https://github.com/vasturiano/d3-force-3d) for the layout physics engine.
 
+See also the [VR version](https://github.com/vasturiano/3d-force-graph-vr), [WebGL 3D version](https://github.com/vasturiano/3d-force-graph), and the [A-Frame component version (aframe-forcegraph-component)](https://github.com/vasturiano/aframe-forcegraph-component).
+
+And check out the [React bindings](https://github.com/vasturiano/react-force-graph).
+
 To load any of the examples below:
 * Open this [hiro marker image](https://ar-js-org.github.io/AR.js/data/images/HIRO.jpg) in your desktop browser.
 * Open the example on your phone browser, and point it at your desktop screen.
@@ -31,10 +35,6 @@ Check out the examples:
 * [Dynamic data changes](https://vasturiano.github.io/3d-force-graph-ar/example/updating/) ([source](https://github.com/vasturiano/3d-force-graph-ar/blob/master/example/updating/index.html))
 * [Node collision detection](https://vasturiano.github.io/3d-force-graph-ar/example/collision-detection/) ([source](https://github.com/vasturiano/3d-force-graph-ar/blob/master/example/collision-detection/index.html))
 * [Emit link particles on demand](https://vasturiano.github.io/3d-force-graph-ar/example/emit-particles/) ([source](https://github.com/vasturiano/3d-force-graph-ar/blob/master/example/emit-particles/index.html))
-
-See also the [VR version](https://github.com/vasturiano/3d-force-graph-vr), [WebGL 3D version](https://github.com/vasturiano/3d-force-graph), and the [A-Frame component version (aframe-forcegraph-component)](https://github.com/vasturiano/aframe-forcegraph-component).
-
-And check out the [React bindings](https://github.com/vasturiano/react-force-graph).
 
 ## Quick start
 
