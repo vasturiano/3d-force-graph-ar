@@ -183,14 +183,14 @@ ForceGraphAR({ configOptions })(<domElement>)
           "name": "name2",
           "val": 10 
         },
-        (...)
+        ...
     ],
     "links": [
         {
             "source": "id1",
             "target": "id2"
         },
-        (...)
+        ...
     ]
 }
 ```
