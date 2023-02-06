@@ -41,7 +41,7 @@ Check out the examples:
 ```js
 import ForceGraphAR from '3d-force-graph-ar';
 ```
-or using a script tag
+or using a *script* tag
 ```html
 <script src="//unpkg.com/3d-force-graph-ar"></script>
 ```
