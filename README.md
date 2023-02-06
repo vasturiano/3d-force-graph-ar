@@ -41,11 +41,7 @@ Check out the examples:
 ```js
 import ForceGraphAR from '3d-force-graph-ar';
 ```
-or
-```js
-const ForceGraphAR = require('3d-force-graph-ar');
-```
-or even
+or using a script tag
 ```html
 <script src="//unpkg.com/3d-force-graph-ar"></script>
 ```
