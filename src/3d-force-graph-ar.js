@@ -102,6 +102,7 @@ export default Kapsule({
     // Create scene
     const scene = document.createElement('a-scene');
     scene.setAttribute('embedded', '');
+    scene.setAttribute('vr-mode-ui', 'enabled: false');
     scene.setAttribute('arjs', 'debugUIEnabled: false;');
 
     const arMarker = document.createElement('a-marker');
