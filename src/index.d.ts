@@ -1,4 +1,4 @@
-import { ThreeForceGraphGeneric } from 'three-forcegraph';
+import { ThreeForceGraphGeneric, NodeObject, LinkObject } from 'three-forcegraph';
 
 export interface ConfigOptions {
   markerAttrs?: object;
@@ -7,8 +7,8 @@ export interface ConfigOptions {
 // don't surface these internal props from inner ThreeForceGraph
 type ExcludedInnerProps = 'onLoading' | 'onFinishLoading' | 'onUpdate' | 'onFinishUpdate' | 'tickFrame' | 'd3AlphaTarget' | 'resetCountdown';
 
-export interface ForceGraphARGenericInstance<ChainableInstance>
-    extends Omit<ThreeForceGraphGeneric<ChainableInstance>, ExcludedInnerProps> {
+export interface ForceGraphARGenericInstance<ChainableInstance, N extends NodeObject = NodeObject, L extends LinkObject<N> = LinkObject<N>>
+    extends Omit<ThreeForceGraphGeneric<ChainableInstance, N, L>, ExcludedInnerProps> {
   (element: HTMLElement): ChainableInstance;
   _destructor(): void;
 
@@ -23,14 +23,14 @@ export interface ForceGraphARGenericInstance<ChainableInstance>
   glScale(glUnits: number): ChainableInstance;
 
   // Interaction
-  onNodeHover(callback: (node: object | null, previousNode: object | null) => void): ChainableInstance;
-  onLinkHover(callback: (link: object | null, previousLink: object | null) => void): ChainableInstance;
-  onNodeClick(callback: (node: object) => void): ChainableInstance;
-  onLinkClick(callback: (link: object) => void): ChainableInstance;
+  onNodeHover(callback: (node: N | null, previousNode: N | null) => void): ChainableInstance;
+  onLinkHover(callback: (link: L | null, previousLink: L | null) => void): ChainableInstance;
+  onNodeClick(callback: (node: N) => void): ChainableInstance;
+  onLinkClick(callback: (link: L) => void): ChainableInstance;
 }
 
-export type ForceGraphARInstance = ForceGraphARGenericInstance<ForceGraphARInstance>;
+export type ForceGraphARInstance<NodeType = NodeObject, LinkType = LinkObject<NodeType>> = ForceGraphARGenericInstance<ForceGraphARInstance<NodeType, LinkType>, NodeType, LinkType>;
 
-declare function ForceGraphAR(configOptions?: ConfigOptions): ForceGraphARInstance;
+declare function ForceGraphAR<NodeType = NodeObject, LinkType = LinkObject<NodeType>>(configOptions?: ConfigOptions): ForceGraphARInstance<NodeType, LinkType>;
 
 export default ForceGraphAR;
