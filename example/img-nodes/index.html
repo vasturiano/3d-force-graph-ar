@@ -25,8 +25,7 @@
         }))
     };
 
-    const Graph = ForceGraphAR()
-      (document.getElementById('3d-graph'))
+    const Graph = new ForceGraphAR(document.getElementById('3d-graph'))
       .nodeThreeObject(({ img }) => {
         const imgTexture = new THREE.TextureLoader().load(`./imgs/${img}`);
         const material = new THREE.SpriteMaterial({ map: imgTexture });

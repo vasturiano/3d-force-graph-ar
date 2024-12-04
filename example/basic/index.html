@@ -24,8 +24,7 @@
         }))
     };
 
-    const Graph = ForceGraphAR()
-      (document.getElementById('3d-graph'))
+    const Graph = new ForceGraphAR(document.getElementById('3d-graph'))
         .graphData(gData)
         .nodeRelSize(10)
         .linkWidth(3)

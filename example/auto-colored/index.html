@@ -28,8 +28,7 @@
         }))
     }
 
-    const Graph = ForceGraphAR()
-      (document.getElementById('3d-graph'))
+    const Graph = new ForceGraphAR(document.getElementById('3d-graph'))
         .nodeAutoColorBy('group')
         .linkAutoColorBy(d => gData.nodes[d.source].group)
         .linkOpacity(0.5)

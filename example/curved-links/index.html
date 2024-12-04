@@ -52,8 +52,7 @@
       ]
     };
 
-    const Graph = ForceGraphAR()
-    (document.getElementById('3d-graph'))
+    const Graph = new ForceGraphAR(document.getElementById('3d-graph'))
       .linkCurvature('curvature')
       .linkCurveRotation('rotation')
       .linkDirectionalParticles(2)

@@ -47,8 +47,7 @@ or using a *script* tag
 ```
 then
 ```js
-const myGraph = ForceGraphAR();
-myGraph(<myDOMElement>)
+const myGraph = new ForceGraphAR(<myDOMElement>)
     .graphData(<myData>);
 ```
 
@@ -62,7 +61,7 @@ Make sure to load these two script tags in your application, required for `AR.js
 
 ### Initialisation
 ```js
-ForceGraphAR({ configOptions })(<domElement>)
+new ForceGraphAR(<domElement>, { configOptions })
 ```
 
 | Config options | Description | Default |

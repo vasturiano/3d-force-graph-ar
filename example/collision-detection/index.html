@@ -23,10 +23,9 @@
       vz: Math.random()
     }));
 
-    const Graph = ForceGraphAR()
+    const Graph = new ForceGraphAR(document.getElementById('3d-graph'))
       .glScale(120)
-      .nodeColor(() => 'firebrick')
-      (document.getElementById('3d-graph'));
+      .nodeColor(() => 'firebrick');
 
     Graph.cooldownTime(Infinity)
       .d3AlphaDecay(0)

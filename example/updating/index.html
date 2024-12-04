@@ -16,8 +16,7 @@
       nodes: [ {id: 0 } ],
       links: []
     };
-    const Graph = ForceGraphAR()
-      (document.getElementById("3d-graph"))
+    const Graph = new ForceGraphAR(document.getElementById("3d-graph"))
         .graphData(initData)
         .nodeRelSize(10)
         .linkWidth(3)
