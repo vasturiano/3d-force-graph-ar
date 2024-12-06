@@ -7,7 +7,7 @@ export interface ConfigOptions {
 // don't surface these internal props from inner ThreeForceGraph
 type ExcludedInnerProps = 'onLoading' | 'onFinishLoading' | 'onUpdate' | 'onFinishUpdate' | 'tickFrame' | 'd3AlphaTarget' | 'resetCountdown';
 
-export interface ForceGraphARGenericInstance<ChainableInstance, N extends NodeObject = NodeObject, L extends LinkObject<N> = LinkObject<N>>
+interface ForceGraphARGenericInstance<ChainableInstance, N extends NodeObject = NodeObject, L extends LinkObject<N> = LinkObject<N>>
   extends Omit<ThreeForceGraphGeneric<ChainableInstance, N, L>, ExcludedInnerProps> {
 
   _destructor(): void;
@@ -32,8 +32,10 @@ export interface ForceGraphARGenericInstance<ChainableInstance, N extends NodeOb
 export type ForceGraphARInstance<NodeType extends NodeObject = NodeObject, LinkType extends LinkObject<NodeType> = LinkObject<NodeType>>
     = ForceGraphARGenericInstance<ForceGraphARInstance<NodeType, LinkType>, NodeType, LinkType>;
 
-interface ForceGraphAR<NodeType extends NodeObject = NodeObject, LinkType extends LinkObject<NodeType> = LinkObject<NodeType>> {
+interface IForceGraphAR<NodeType extends NodeObject = NodeObject, LinkType extends LinkObject<NodeType> = LinkObject<NodeType>> {
   new(element: HTMLElement, configOptions?: ConfigOptions): ForceGraphARInstance<NodeType, LinkType>;
 }
+
+declare const ForceGraphAR: IForceGraphAR;
 
 export default ForceGraphAR;
