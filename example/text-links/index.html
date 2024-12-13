@@ -4,8 +4,6 @@
   <script src="//unpkg.com/aframe"></script>
   <script src="//unpkg.com/@ar-js-org/ar.js"></script>
 
-  <script src="//unpkg.com/three-spritetext"></script>
-
   <script src="//unpkg.com/3d-force-graph-ar"></script>
   <!--<script src="../../dist/3d-force-graph-ar.js"></script>-->
 </head>
@@ -13,7 +11,9 @@
 <body>
   <div id="3d-graph"></div>
 
-  <script>
+  <script type="module">
+    import SpriteText from "https://esm.sh/three-spritetext";
+
     const Graph = new ForceGraphAR(document.getElementById('3d-graph'))
         .jsonUrl('../datasets/miserables.json')
         .nodeAutoColorBy('group')
