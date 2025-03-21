@@ -43,7 +43,7 @@ import ForceGraphAR from '3d-force-graph-ar';
 ```
 or using a *script* tag
 ```html
-<script src="//unpkg.com/3d-force-graph-ar"></script>
+<script src="//cdn.jsdelivr.net/npm/3d-force-graph-ar"></script>
 ```
 then
 ```js
@@ -53,8 +53,8 @@ const myGraph = new ForceGraphAR(<myDOMElement>)
 
 Make sure to load these two script tags in your application, required for `AR.js` + `A-frame` to function properly:
 ```html
-<script src="//unpkg.com/aframe"></script>
-<script src="//unpkg.com/@ar-js-org/ar.js"></script>
+<script src="//cdn.jsdelivr.net/npm/aframe"></script>
+<script src="//cdn.jsdelivr.net/npm/@ar-js-org/ar.js"></script>
 ```
 
 ## API reference
